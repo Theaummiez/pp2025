@@ -35,39 +35,3 @@ class Marks:
             for cid in tab_courses
         }
 
-def test():
-    #create by chatgpt to test my code !!!
-    # ---- Test Student ----
-    s = Student(["1", "Alice", "12/12/2000"])
-    print(s)
-
-    # ---- Test Student.Create_tab ----
-    import builtins
-
-    inputs = iter(["1 Alice 12/12/2000", "2 Bob 11/11/2001"])
-    real_input = builtins.input
-    builtins.input = lambda _: next(inputs)
-    tab_student = Student.Create_tab(2)
-    builtins.input = real_input
-
-    print("\nStudents table:")
-    for s in tab_student.values():
-        print(s)
-
-    # ---- Test Courses.create_tab ----
-    inputs = iter(["1 Math", "2 Python"])
-    builtins.input = lambda _: next(inputs)
-    tab_courses = Courses.create_tab(2)
-    builtins.input = real_input
-
-    print("Courses table:")
-    for c in tab_courses.values():
-        print(c)
-
-    # ---- Test Marks ----
-    m = Marks()
-    m.create_tab(tab_student, tab_courses)
-
-    print("Marks table:")
-    print(m.tab_marks)
-
