@@ -35,7 +35,35 @@ class Marks:
             for cid in tab_courses
         }
 
-class ChatgptStudent(Student):
-    def useChatgpt(self):
-        return f"{self.name} is very dumb"
-        
+#made by IA 
+def main():
+    print("=== Create Students ===")
+    n = int(input("How many students? "))
+    students = Student.Create_tab(n)
+
+    print("\n=== Create Courses ===")
+    c = int(input("How many courses? "))
+    courses = Courses.create_tab(c)
+
+    print("\n=== Creating Mark Table ===")
+    marks = Marks()
+    marks.create_tab(students, courses)
+
+    print("\n=== Students Table ===")
+    for sid, s in students.items():
+        print(s)
+
+    print("=== Courses Table ===")
+    for cid, c in courses.items():
+        print(c)
+
+    print("=== Marks Table (empty lists) ===")
+    for course_name, students_marks in marks.tab_marks.items():
+        print(f"\nCourse: {course_name}")
+        for student_name, mark_list in students_marks.items():
+            print(f"  {student_name}: {mark_list}")
+
+
+# Run main if executed directly
+if __name__ == "__main__":
+    main()
