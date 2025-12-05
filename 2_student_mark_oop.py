@@ -35,3 +35,7 @@ class Marks:
             for cid in tab_courses
         }
 
+class ChatgptStudent(Student):
+    def useChatgpt(self):
+        return f"{self.name} is very dumb"
+        
