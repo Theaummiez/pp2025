@@ -72,7 +72,7 @@ class Marks:
                 student.credits[cid] = course.credit  
 
 
-
+#display with module curses
 def display_sorted_students(tab_students):
     '''utilise curses afin d avoir un beau UI'''
     sorted_list = sorted(tab_students.values(), key=lambda s: s.calculate_gpa(), reverse=True)
