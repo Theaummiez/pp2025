@@ -34,7 +34,7 @@ class Student:
             weighted_scores.append(gpa_score * credit)
             total_credits.append(credit)
         return sum(weighted_scores)/sum(total_credits)
-    
+        
 class Courses:
     def __init__(self, data):
         self.id = int(data[0])
